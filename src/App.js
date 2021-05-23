@@ -1,17 +1,18 @@
 import React from 'react';
-
 import styled from 'styled-components';
 
+import { HomePage } from './pages';
+
 const Container = styled.div`
-background: red;
+${'' /* background: red;
 color: #fff;
-font-size: 2rem;
-`
+font-size: 2rem; */}
+`;
 
 const App = () => {
     return (
         <Container>
-            <h1>Minh</h1>
+            <HomePage />
         </Container>
     )
 }
