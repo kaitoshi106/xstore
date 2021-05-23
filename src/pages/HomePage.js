@@ -1,12 +1,14 @@
 import React from 'react';
 
-import { FeaturedProducts, Introduction } from '../components';
+import { Contact, FeaturedProducts, Introduction, Services } from '../components';
 
 const HomePage = () => {
     return (
         <main>
             <Introduction />
             <FeaturedProducts />
+            <Services />
+            <Contact />
         </main>
     )
 }

@@ -1,20 +1,21 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { Fragment } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Footer, Navbar } from './components';
 
-import { HomePage } from './pages';
-
-const Container = styled.div`
-${'' /* background: red;
-color: #fff;
-font-size: 2rem; */}
-`;
+import { HomePage } from "./pages";
 
 const App = () => {
-    return (
-        <Container>
+  return (
+      <Router>
+      <Navbar />
+        <Switch>
+          <Route exact path="/">
             <HomePage />
-        </Container>
-    )
-}
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
+  ); 
+};
 
 export default App;

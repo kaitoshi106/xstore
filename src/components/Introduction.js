@@ -1,27 +1,30 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
-import introImg from '../assets/fashion-portrait-2.jpg';
-import introImg2 from '../assets/nora.jpg';
+import introImg from "../assets/fashion-portrait-2.jpg";
+import introImg2 from "../assets/nora.jpg";
 
 const Introduction = () => {
-    return (
-        <Wrapper className='section-center'>
-            <article className="content">
-                <h1>Your one and only online pharmacy!</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti iure quasi odit tenetur unde officiis repudiandae quod deserunt quia eum?</p>
-                {/* <Link to='/products' className='btn hero-btn'>
-                    Shop now
-                </Link> */}
-            </article>
-            <article className="img-container">
-                <img src={introImg} alt='main img' className='main-img' />
-                <img src={introImg2} alt='intro product' className='accent-img' />
-            </article>
-        </Wrapper>
-    )
-}
+  return (
+    <Wrapper className="section-center">
+      <article className="content">
+        <h1>Your one and only online pharmacy!</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti iure
+          quasi odit tenetur unde officiis repudiandae quod deserunt quia eum?
+        </p>
+        <Link to="/products" className="btn hero-btn">
+          Shop now
+        </Link>
+      </article>
+      <article className="img-container">
+        <img src={introImg} alt="main img" className="main-img" />
+        <img src={introImg2} alt="intro product" className="accent-img" />
+      </article>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.section`
   min-height: 60vh;
@@ -72,7 +75,7 @@ const Wrapper = styled.section`
       border-radius: var(--radius);
     }
     .img-container::before {
-      content: '';
+      content: "";
       position: absolute;
       width: 10%;
       height: 80%;
@@ -82,6 +85,6 @@ const Wrapper = styled.section`
       border-radius: var(--radius);
     }
   }
-`
+`;
 
-export default Introduction; 
+export default Introduction;

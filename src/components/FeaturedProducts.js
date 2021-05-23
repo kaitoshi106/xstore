@@ -5,16 +5,14 @@ import styled from "styled-components";
 const FeaturedProducts = () => {
   return (
     <FeaturedProductsWrapper className="section">
-      {/* <Router> */}
       <div className="title">
         <h2>Featured Products</h2>
         <div className="underline"></div>
       </div>
       <div className="section-center featured">product list</div>
-      {/* <Link to="/products" className="btn">
+      <Link to="/products" className="btn">
         all products
-      </Link> */}
-      {/* </Router> */}
+      </Link>
     </FeaturedProductsWrapper>
 
   );
