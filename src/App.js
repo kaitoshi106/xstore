@@ -4,7 +4,9 @@ import { Footer, Navbar } from "./components";
 
 import { About, ErrorPage, HomePage } from "./pages";
 
+
 const App = () => {
+
   return (
     <Router>
       <Navbar />

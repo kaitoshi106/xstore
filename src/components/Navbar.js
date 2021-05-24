@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 
 import logo from "../assets/logo.png";
-import CartBtn from "./CartBtn";
+import CartBtn from "./Cart/CartBtns";
 
 
 const Navbar = () => {

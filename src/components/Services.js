@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { services } from '../data-mock/constants';
+import { services } from '../data/constants';
 
 const Services = () => {
 return (
