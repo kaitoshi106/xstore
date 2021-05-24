@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { services } from '../data-mock/constants';
 
 const Services = () => {
 return (
@@ -12,7 +13,15 @@ return (
             quod?</p>
             </article>
             <div className='services-center'>
-                list service
+                {services.map(( {id, icon, title, text} ) => {
+                  return (
+                    <article key={id} className='service'>
+                      <span className='icon'>{icon}</span>
+                      <h4>{title}</h4>
+                      <p>{text}</p>
+                    </article>
+                  )
+                })}
             </div>
         </div>
     </Wrapper>

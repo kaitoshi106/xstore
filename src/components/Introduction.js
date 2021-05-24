@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import introImg from "../assets/fashion-portrait-2.jpg";
+import introImg from "../assets/fashion.jpg";
 import introImg2 from "../assets/nora.jpg";
 
 const Introduction = () => {
