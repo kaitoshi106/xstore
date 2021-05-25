@@ -1,17 +1,41 @@
 import React from "react";
-import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import styled from "styled-components";
 
-// import CartBtns from "./CartBtns";
-// import { useProductsContext } from "../context/products_context";
-// import { useUserContext } from "../context/user_context";
-// import { links } from "../utils/constants";
+import logo from "../assets/logo.png";
+import CartBtns from "./Cart/CartBtns";
+import { links } from "../data/constants";
+import { useProductsContext } from "../hooks/context/products_context";
 
 
 const Sidebar = () => {
-  return <SidebarContainer></SidebarContainer>;
+  const { isSidebarOpen, closeSidebar } = useProductsContext();
+
+  return (
+    <SidebarContainer>
+      <div className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}>
+        <div className='sidebar-header'>
+          <img src={logo} className='logo' alt='xstore logo' />
+          <button className='close-btn' onClick={closeSidebar}>
+            <FaTimes />
+          </button>
+        </div>
+        <ul className='links'>
+          {links.map(({ id, text, url }) => {
+            return (
+              <li key={id}>
+                <Link to={url} onClick={closeSidebar}>
+                  {text}
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
+        <CartBtns />
+      </div>
+    </SidebarContainer>
+  )
 };
 
 const SidebarContainer = styled.div`

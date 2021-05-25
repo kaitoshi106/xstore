@@ -2,18 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { formatPrice } from "../../utils/format_price";
 
-const Product = () => {
+const Product = ({ image, name, price, id }) => {
   return (
     <Wrapper>
       <div className="container">
-        <Link className="link">
+        <img src={image} alt = {name} />
+        <Link to={`/products/${id}`} className="link">
           <FaSearch />
         </Link>
       </div>
       <footer>
-        <h5>test</h5>
-        <p>test</p>
+        <h5>{name}</h5>
+        <p>{formatPrice(price)}</p>
       </footer>
     </Wrapper>
   );
