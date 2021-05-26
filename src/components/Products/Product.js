@@ -13,10 +13,10 @@ const Product = ({ image, name, price, id }) => {
           <FaSearch />
         </Link>
       </div>
-      <footer>
+      <div className='product-content'>
         <h5>{name}</h5>
         <p>{formatPrice(price)}</p>
-      </footer>
+      </div>
     </Wrapper>
   );
 };
@@ -60,18 +60,18 @@ const Wrapper = styled.article`
   .container:hover .link {
     opacity: 1;
   }
-  footer {
+  .product-content {
     margin-top: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  footer h5,
-  footer p {
+  .product-content h5,
+  .product-content p {
     margin-bottom: 0;
     font-weight: 400;
   }
-  footer p {
+  .product-content p {
     color: var(--clr-primary-5);
     letter-spacing: var(--spacing);
   }

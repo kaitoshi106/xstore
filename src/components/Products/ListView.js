@@ -1,8 +1,26 @@
 import React from "react";
 import styled from "styled-components";
+import { formatPrice } from "../../utils/format_price";
+import Product from "./Product";
 
-const ListView = () => {
-  return <Wrapper>products</Wrapper>;
+const ListView = ({products}) => {
+  return (
+    <Wrapper>
+      {products.map(({ id, name, image, price, description }) => {
+        return (
+          <article key={id}>
+            <img src={image} alt={name} />
+            <div className="product__content">
+              <h4>{name}</h4>
+              <h5 className='price'>{formatPrice(price)}</h5>
+              <p>{description.substring(0, 150)}...</p>
+              <Link to={`/products/${id}`} className='btn'>Details</Link>
+            </div>
+          </article>
+        )
+      })}
+    </Wrapper>
+  )
 };
 
 const Wrapper = styled.section`

@@ -8,7 +8,7 @@ const ProductsPage = () => {
       <HeroPage title='products' />
       <Wrapper className='page'>
         <div className='section-center products'>
-          {/* <Filters /> */}
+          <Filters />
           <div>
             {/* <Sort /> */}
             <ProductList />
