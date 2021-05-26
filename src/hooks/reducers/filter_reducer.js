@@ -15,9 +15,11 @@ const SORT_NAME_A = process.env.SORT_NAME_A;
 const SORT_NAME_Z = process.env.SORT_NAME_Z;
 
 const filter_reducer = (state, action) => {
+  console.log('actions1111', state)
   switch (action.type) {
     case LOAD_PRODUCTS:
       let maxPrice = action.payload.map((item) => item.price);
+      console.log('maxprice', maxPrice)
       maxPrice = Math.max(...maxPrice);
       return {
         ...state,
@@ -105,7 +107,7 @@ const filter_reducer = (state, action) => {
 
     case FILTER_PRODUCTS:
       const { all_products } = state;
-      console.log("all_products", all_products);
+      console.log("all_products", state);
       const { text, category, color, price, company, shipping } = state.filters;
       let newAllProducts = [...all_products];
 

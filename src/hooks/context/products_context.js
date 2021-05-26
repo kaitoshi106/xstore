@@ -42,7 +42,6 @@ export const ProductsProvider = ({ children }) => {
   };
 
   const fetchDetailProduct = async (url) => {
-    console.log('minhtran',url);
     dispatch({ type: GET_SINGLE_PRODUCT_BEGIN });
     try {
       const response = await axios.get(url);

@@ -37,7 +37,7 @@ const DetailProduct = () => {
 //       }, 2000);
 //     }
 //   }, [error]);
-
+console.log(product)
   if (loading) {
     return <Loading />;
   }

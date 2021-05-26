@@ -10,16 +10,14 @@ import reducer from "../reducers/products_reducer";
 
 const SHIPPING_FEE = process.env.SHIPPING_FEE;
 
-const CartContext = createContext();
-
 const getLocalStorage = () => {
-  const cart = localStorage.getItem("cart");
+  let cart = localStorage.getItem('cart')
   if (cart) {
-    return JSON.parse(localStorage.getItem("cart"));
+    return JSON.parse(localStorage.getItem('cart'))
   } else {
-    return [];
+    return []
   }
-};
+}
 
 const initialState = {
   cart: getLocalStorage(),
@@ -28,10 +26,12 @@ const initialState = {
   shipping_fee: SHIPPING_FEE,
 };
 
+const CartContext = createContext();
+
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-
-  const addToCart = ({ id, color, product, amount }) => {
+console.log('state provider', state)
+  const addToCart = ( id, color, product, amount ) => {
     dispatch({ type: ADD_TO_CART, payload: { id, color, amount, product } });
   };
 
