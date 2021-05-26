@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Footer, Navbar, Sidebar } from "./components";
 
-import { About, ErrorPage, HomePage } from "./pages";
+import { About, DetailProduct, ErrorPage, HomePage } from "./pages";
 import CartPage from "./pages/CartPage";
 import ProductsPage from "./pages/ProductsPage";
 
@@ -26,6 +26,7 @@ const App = () => {
         <Route exact path='/cart'>
           <CartPage />
         </Route>
+        <Route exact path='/products/:id' children={<DetailProduct />} />
         <Route path="/error">
           <ErrorPage />
         </Route>

@@ -1,4 +1,8 @@
 import React, { createContext, useContext, useEffect, useReducer } from "react";
+
+import filter_reducer from "../reducers/filter_reducer";
+
+import { useProductsContext } from "./products_context";
 import {
     CLEAR_FILTERS,
     FILTER_PRODUCTS,
@@ -9,9 +13,6 @@ import {
     UPDATE_FILTERS,
     UPDATE_SORT,
 } from "../actions/actions-type";
-import filter_reducer from "../reducers/filter_reducer";
-
-import { useProductsContext } from "./products_context";
 
 const initialState = {
     filtered_products: [],
@@ -59,18 +60,23 @@ export const FilterProvider = ({ children }) => {
     };
 
     const updateFilters = (e) => {
-        const { name, value, dataset, textContent, checked } = e.target;
+        let { name, value, dataset, textContent, checked } = e.target;
 
         switch (name) {
             case 'color':
-                return value = dataset.color;
+                 value = dataset.color;
+                 break;
             case 'category':
-                return value = textContent;
+                value = textContent;
+                break;
             case 'price':
-                return value = Number(value);
+                value = Number(value);
+                break;
             case 'shipping':
-                return value = checked;
-                throw new Error('No Matching Name Value')
+                value = checked;
+                break;
+            
+            throw new Error('No Matching Name Value')
         }
 
         dispatch({ type: UPDATE_FILTERS, payload: { name, value } })

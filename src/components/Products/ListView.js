@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { formatPrice } from "../../utils/format_price";
 import Product from "./Product";

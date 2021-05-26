@@ -59,7 +59,7 @@ const Filters = () => {
               })}
             </select>
           </div>
- 
+
           <div className="form-control">
             <h5>colors</h5>
             <div className="colors">
@@ -71,8 +71,9 @@ const Filters = () => {
                       name="color"
                       onClick={updateFilters}
                       data-color="all"
-                      className={`${color === "all" ? "all-btn active" : "all-btn"
-                        }`}
+                      className={`${
+                        color === "all" ? "all-btn active" : "all-btn"
+                      }`}
                     >
                       all
                     </button>
@@ -83,8 +84,9 @@ const Filters = () => {
                     key={index}
                     name="color"
                     style={{ background: item }}
-                    className={`${color === item ? "color-btn active" : "color-btn"
-                      }`}
+                    className={`${
+                      color === item ? "color-btn active" : "color-btn"
+                    }`}
                     data-color={item}
                     onClick={updateFilters}
                   >
@@ -105,8 +107,9 @@ const Filters = () => {
                     onClick={updateFilters}
                     type="button"
                     name="category"
-                    className={`${category === item.toLowerCase() ? "active" : null
-                      }`}
+                    className={`${
+                      category === item.toLowerCase() ? "active" : null
+                    }`}
                   >
                     {item}
                   </button>
@@ -139,9 +142,8 @@ const Filters = () => {
             />
           </div>
         </form>
-        
+
         <button type="button" className="clear-btn" onClick={clearFilters}>
-          {" "}
           clear filters
         </button>
       </div>

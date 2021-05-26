@@ -22,8 +22,7 @@ import ProductImages from './Products/ProductImages';
 import ProductList from './Products/ProductList';
 import Sidebar from './Sidebar';
 import Sort from './Products/Sort';
-import Starts from './Products/Stars';
-import StripeCheckout from './StripeCheckout';
+import Stars from './Products/Stars';
 
 export {
   Introduction,
@@ -50,6 +49,5 @@ export {
   ProductList,
   Sidebar,
   Sort,
-  Starts,
-  StripeCheckout
+  Stars,
 };
