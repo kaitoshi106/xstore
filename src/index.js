@@ -2,15 +2,18 @@ import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
 
 import App from "./App";
+import "./index.css";
+import { CartProvider } from "./hooks/context/cart_context";
 import { FilterProvider } from "./hooks/context/filter_context";
 import { ProductsProvider } from "./hooks/context/products_context";
-import './index.css';
 
 ReactDOM.render(
-    <ProductsProvider>
-      <FilterProvider>
+  <ProductsProvider>
+    <FilterProvider>
+      {/* <CartProvider> */}
         <App />
-      </FilterProvider>
-    </ProductsProvider>,
+      {/* </CartProvider> */}
+    </FilterProvider>
+  </ProductsProvider>,
   document.querySelector("#root")
 );

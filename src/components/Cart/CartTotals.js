@@ -1,27 +1,35 @@
 import React from "react";
 import styled from "styled-components";
 
+import { useCartContext } from "../../hooks/context/cart_context";
+import { formatPrice } from "../../utils/format_price";
+
 const CartTotals = () => {
+  const { total_amount, shipping_fee } = useCartContext()
 
   return (
     <Wrapper>
       <div>
         <article>
           <h5>
-            subtotal : <span>test</span>
+            subtotal : <span>{formatPrice(total_amount)}</span>
           </h5>
           <p>
-            shipping fee : <span>test</span>
+            shipping fee : <span>{formatPrice(shipping_fee)}</span>
           </p>
           <hr />
           <h4>
-            order total : <span>test</span>
+            order total :{' '}
+            <span>{formatPrice(total_amount + shipping_fee)}</span>
           </h4>
         </article>
+          <button className='btn'>
+            login
+          </button>
       </div>
     </Wrapper>
-  );
-};
+  )
+}
 
 const Wrapper = styled.section`
   margin-top: 3rem;

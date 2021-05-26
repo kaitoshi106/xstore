@@ -10,7 +10,7 @@ const FeaturedProducts = () => {
     products_error: error,
     featured_products: featured
   } = useProductsContext();
-  
+  console.log('featured_products', featured)
   loading && <Loading />
   error && <Error />
   

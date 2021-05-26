@@ -36,6 +36,8 @@ const FilterContext = createContext();
 export const FilterProvider = ({ children }) => {
   const { products } = useProductsContext();
   const [state, dispatch] = useReducer(filter_reducer, initialState);
+console.log('state filter context', state)
+console.log('featured_products', products)
 
   useEffect(() => {
     dispatch({ type: LOAD_PRODUCTS, payload: products });
