@@ -30,7 +30,7 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-console.log('state provider', state)
+
   const addToCart = ( id, color, product, amount ) => {
     dispatch({ type: ADD_TO_CART, payload: { id, color, amount, product } });
   };

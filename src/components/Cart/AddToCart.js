@@ -7,7 +7,7 @@ import { useCartContext } from "../../hooks/context/cart_context";
 import { AmountButtons } from "..";
 
 const AddToCart = ({ product }) => {
-  console.log('product', product)
+
   const { id, stock, colors } = product;
   const { addToCart } = useCartContext();
 

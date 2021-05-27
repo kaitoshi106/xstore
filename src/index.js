@@ -10,9 +10,9 @@ import { ProductsProvider } from "./hooks/context/products_context";
 ReactDOM.render(
   <ProductsProvider>
     <FilterProvider>
-      <CartProvider>
+      {/* <CartProvider> */}
         <App />
-      </CartProvider>
+      {/* </CartProvider> */}
     </FilterProvider>
   </ProductsProvider>,
   document.querySelector("#root")

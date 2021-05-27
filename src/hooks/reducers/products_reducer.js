@@ -10,7 +10,6 @@ import {
 } from "../actions/actions-type";
 
 const reducer = (state, action) => {
-  console.log("state products", state)
   switch (action.type) {
     case GET_PRODUCTS_BEGIN:
       return {
@@ -26,7 +25,6 @@ const reducer = (state, action) => {
 
     case GET_PRODUCTS_SUCCESS:
       const productsList = action.payload;
-      console.log('productss  ssss', productsList)
       const featured_products = productsList.filter (product => 
         product.featured === true
       )

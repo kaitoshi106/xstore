@@ -30,14 +30,14 @@ const DetailProduct = () => {
     fetchDetailProduct(`${URL_Detail_Product}${id}`);
   }, [id]);
 
-//   useEffect(() => {
-//     if (error) {
-//       setTimeout(() => {
-//         history.push("/");
-//       }, 2000);
-//     }
-//   }, [error]);
-console.log(product)
+  useEffect(() => {
+    if (error) {
+      setTimeout(() => {
+        history.push("/");
+      }, 2000);
+    }
+  }, [error]);
+
   if (loading) {
     return <Loading />;
   }
@@ -82,7 +82,7 @@ console.log(product)
               {company}
             </p>
             <hr />
-            {stock > 0 && <AddToCart product={product} />}
+            {/* {stock > 0 && <AddToCart product={product} />} */}
           </section>
         </div>
       </div>

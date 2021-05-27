@@ -15,11 +15,11 @@ const SORT_NAME_A = process.env.SORT_NAME_A;
 const SORT_NAME_Z = process.env.SORT_NAME_Z;
 
 const filter_reducer = (state, action) => {
-  console.log('actions1111', state)
+  console.log('state', state)
+
   switch (action.type) {
     case LOAD_PRODUCTS:
       let maxPrice = action.payload.map((item) => item.price);
-      console.log('maxprice', maxPrice)
       maxPrice = Math.max(...maxPrice);
       return {
         ...state,
@@ -45,7 +45,6 @@ const filter_reducer = (state, action) => {
       };
 
     case UPDATE_SORT:
-      console.log("update sort");
       return {
         ...state,
         sort: action.payload,
@@ -96,7 +95,6 @@ const filter_reducer = (state, action) => {
 
     case UPDATE_FILTERS:
       const { name, value } = action.payload;
-      console.log("name", name);
       return {
         ...state,
         filters: {
@@ -107,19 +105,16 @@ const filter_reducer = (state, action) => {
 
     case FILTER_PRODUCTS:
       const { all_products } = state;
-      console.log("all_products", state);
       const { text, category, color, price, company, shipping } = state.filters;
       let newAllProducts = [...all_products];
 
       if (text) {
         newAllProducts = newAllProducts.filter((product) => {
-          console.log("product", product);
           return product.name.toLowerCase().startsWith(text);
         });
       }
 
       if (category !== "all") {
-        console.log("newAllProducts", newAllProducts);
         newAllProducts = newAllProducts.filter(
           (product) => product.category === category
         );
@@ -134,9 +129,7 @@ const filter_reducer = (state, action) => {
 
       // company
       if (company !== "all") {
-        console.log("minh", newAllProducts);
         newAllProducts = newAllProducts.filter((product) => {
-          console.log("company", product);
           return product.company === company;
         });
       }
