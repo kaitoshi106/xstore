@@ -1,4 +1,5 @@
 {
+  "homepage": "http://kaitoshi106.github.io/xstore",
   "name": "xstore",
   "version": "1.0.0",
   "description": "",
@@ -6,7 +7,10 @@
   "scripts": {
     "webpack": "webpack",
     "start": "webpack serve --mode development",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +25,7 @@
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.4",
     "file-loader": "^6.2.0",
+    "gh-pages": "^3.2.0",
     "html-webpack-plugin": "^5.3.1",
     "image-webpack-loader": "^7.0.1",
     "node-sass": "^5.0.0",
